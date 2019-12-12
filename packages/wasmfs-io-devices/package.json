@@ -1,0 +1,51 @@
+{
+  "name": "@wasmer/wasmfs-io-devices",
+  "version": "0.5.1",
+  "description": "Isomorphic library to implement the experimental Wasmer I/O devices for wasmfs instances 🖼️🎮",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "iife": "lib/index.iife.js",
+  "typings": "lib/wasmfs-io-devices/src/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "npm run build:prod",
+    "build:prod": "rollup -c --environment PROD",
+    "build:dev": "rollup -c --environment DEV",
+    "dev": "watch \"npm run build:dev\" src",
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --config jest.config.js --watch",
+    "docs": "typedoc src/ --out docs --target es6 --theme minimal --mode file"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasmerio/wasmer-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "wasm",
+    "wasi",
+    "fs",
+    "file",
+    "system",
+    "wapm",
+    "wasmer"
+  ],
+  "author": "Wasmer Engineering Team <engineering@wasmer.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wasmerio/wasmer-js/issues"
+  },
+  "homepage": "https://github.com/wasmerio/wasmer-js/tree/master/packages/wasmfs-io-devices",
+  "dependencies": {},
+  "gitHead": "889c22135c81610ddecbb696f8ef24f7ecaf5db7",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "rollup": "^1.27.3",
+    "typedoc": "^0.15.2",
+    "watch": "^1.0.2"
+  }
+}

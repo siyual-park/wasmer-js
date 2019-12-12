@@ -44,6 +44,7 @@
   "dependencies": {
     "@wasmer/wasi": "^0.5.1",
     "@wasmer/wasmfs": "^0.5.1",
+    "@wasmer/wasmfs-io-devices": "^0.5.1",
     "comlink": "^4.0.5",
     "shell-parse": "0.0.2",
     "shell-quote": "^1.7.1",
