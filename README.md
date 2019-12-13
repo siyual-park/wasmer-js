@@ -65,4 +65,4 @@ Please see the website for [lerna](https://lerna.js.org/) for a quick introducti
 
 - To add new dependencies and keep build times low, `devDependencies` ([not CLI dependencies](https://github.com/lerna/lerna/issues/1079#issuecomment-337660289)) must be added to the root [package.json](./package.json) file. Project installation / runtime dependencies are managed for each package individually.
 
-- Sibling JS packages can depend on one another. You can do this by using [@lerna/add](https://github.com/lerna/lerna/pull/1069). For example, `lerna add @wasmer/package-1 --scope=@wasmer/package-2` will add @wasmer/package-1@^1.0.0 to @wasmer/package-2
+- Sibling JS packages can depend on one another. You can do this by using [@lerna/add](https://github.com/lerna/lerna/pull/1069). For example, `lerna add @wasmer/package-1 --scope=@wasmer/package-2` will add <dependency> --scope=<depending>. If this is having issues, I've found [this issue reply](https://github.com/lerna/lerna/issues/2011#issuecomment-529836157) can help when it still tries to fetch from npm, rather than locally.
