@@ -5,6 +5,7 @@ const Terminal = xtermDefault.Terminal || xterm.Terminal;
 import { FitAddon } from "xterm-addon-fit";
 import { WebLinksAddon } from "xterm-addon-web-links";
 // import { WebglAddon } from 'xterm-addon-webgl';
+import { LigaturesAddon } from "xterm-addon-ligatures";
 
 import WasmTerminalConfig from "./wasm-terminal-config";
 import WasmTty from "./wasm-tty/wasm-tty";
@@ -17,6 +18,7 @@ export default class WasmTerminal {
   container: HTMLElement | undefined;
   webLinksAddon: WebLinksAddon;
   fitAddon: FitAddon;
+  ligaturesAddon: any;
 
   wasmTerminalConfig: WasmTerminalConfig;
   wasmTty: WasmTty;
@@ -55,8 +57,10 @@ export default class WasmTerminal {
     // Load our addons
     this.webLinksAddon = new WebLinksAddon();
     this.fitAddon = new FitAddon();
+    this.ligaturesAddon = new LigaturesAddon();
     this.xterm.loadAddon(this.fitAddon);
     this.xterm.loadAddon(this.webLinksAddon);
+    this.xterm.loadAddon(this.ligaturesAddon);
 
     this.wasmTerminalConfig = new WasmTerminalConfig(config);
 
@@ -84,6 +88,7 @@ export default class WasmTerminal {
 
     this.xterm.open(container);
     // this.xterm.loadAddon(new WebglAddon());
+    (this.xterm as any).enableLigatures();
     this.isOpen = true;
     setTimeout(() => {
       // Fix for Mobile Browsers and their virtual keyboards
